@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+
 import Visit from '../models/Visit';
 
 class VisitController {
@@ -15,9 +16,23 @@ class VisitController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const visit = await Visit.create(req.body);
+    const {
+      id,
+      id_representative: representative,
+      name,
+      address,
+      dt_visit: date,
+      cost,
+    } = await Visit.create(req.body);
 
-    return res.json(visit);
+    return res.json({
+      id,
+      representative,
+      name,
+      address,
+      date,
+      cost,
+    });
   }
 
   async index(req, res) {
@@ -26,10 +41,10 @@ class VisitController {
     const visits = await Visit.findAll({
       attributes: [
         'id',
-        'id_representative',
+        ['id_representative', 'representative'],
         'name',
         'address',
-        'dt_visit',
+        ['dt_visit', 'date'],
         'cost',
       ],
       limit: 5,
@@ -47,10 +62,10 @@ class VisitController {
       where: { id_representative: index },
       attributes: [
         'id',
-        'id_representative',
+        ['id_representative', 'representative'],
         'name',
         'address',
-        'dt_visit',
+        ['dt_visit', 'date'],
         'cost',
       ],
       limit: 5,
@@ -85,9 +100,23 @@ class VisitController {
       return res.status(400).json({ error: 'Visit does not exists' });
     }
 
-    const visitUpdated = await visit.update(req.body);
+    const {
+      id,
+      id_representative: representative,
+      name,
+      address,
+      dt_visit: date,
+      cost,
+    } = await visit.update(req.body);
 
-    return res.json(visitUpdated);
+    return res.json({
+      id,
+      representative,
+      name,
+      address,
+      date,
+      cost,
+    });
   }
 
   async delete(req, res) {

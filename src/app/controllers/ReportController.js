@@ -2,7 +2,7 @@ import sequelize from 'sequelize';
 import Visit from '../models/Visit';
 
 class ReportVisitController {
-  async show(req, res) {
+  async index(req, res) {
     const visits = await Visit.findAll({
       attributes: [
         'id_representative',
@@ -10,7 +10,7 @@ class ReportVisitController {
       ],
       group: ['id_representative'],
       order: sequelize.literal('count DESC'),
-      limit: 3,
+      limit: 1,
     });
 
     const costs = await Visit.findAll({
@@ -20,7 +20,7 @@ class ReportVisitController {
       ],
       group: ['id_representative'],
       order: sequelize.literal('total DESC'),
-      limit: 3,
+      limit: 1,
     });
 
     return res.json({

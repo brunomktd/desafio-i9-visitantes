@@ -12,6 +12,6 @@ routes.put('/visits/:index', VisitController.update);
 routes.delete('/visits/:index', VisitController.delete);
 
 // Reports
-routes.get('/reports', ReportController.show);
+routes.get('/reports', ReportController.index);
 
 export default routes;
