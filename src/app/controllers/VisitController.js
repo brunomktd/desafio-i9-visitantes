@@ -47,7 +47,7 @@ class VisitController {
         ['dt_visit', 'date'],
         'cost',
       ],
-      limit: 5,
+      limit: 10,
       offset: (page - 1) * 5,
     });
 
