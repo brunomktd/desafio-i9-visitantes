@@ -23,6 +23,10 @@ class ReportVisitController {
       limit: 1,
     });
 
+    if (!visits.length > 0) {
+      return res.status(404).json({ error: 'Data does not exists' });
+    }
+
     return res.json({
       topVisits: visits,
       topCosts: costs,

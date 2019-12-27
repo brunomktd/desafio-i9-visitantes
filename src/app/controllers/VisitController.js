@@ -48,7 +48,7 @@ class VisitController {
         'cost',
       ],
       limit: 10,
-      offset: (page - 1) * 5,
+      offset: (page - 1) * 10,
     });
 
     return res.json(visits);

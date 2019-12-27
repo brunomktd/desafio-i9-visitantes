@@ -3,7 +3,7 @@ module.exports = {
   host: 'localhost',
   username: 'postgres',
   password: 'inovelab',
-  database: 'visitantes',
+  database: 'postgres',
   define: {
     timestamps: true,
     underscored: true,
