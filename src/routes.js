@@ -1,7 +1,7 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
-import VisitController from './app/controllers/VisitController';
-import ReportController from './app/controllers/ReportController';
+const VisitController = require('./app/controllers/VisitController');
+const ReportController = require('./app/controllers/ReportController');
 
 const routes = new Router();
 
@@ -14,4 +14,4 @@ routes.delete('/visits/:index', VisitController.delete);
 // Reports
 routes.get('/reports', ReportController.index);
 
-export default routes;
+module.exports = routes;

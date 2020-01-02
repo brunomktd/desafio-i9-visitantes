@@ -1,5 +1,5 @@
-import sequelize from 'sequelize';
-import Visit from '../models/Visit';
+const sequelize = require('sequelize');
+const Visit = require('../models/Visit');
 
 class ReportVisitController {
   async index(req, res) {
@@ -34,4 +34,4 @@ class ReportVisitController {
   }
 }
 
-export default new ReportVisitController();
+module.exports = new ReportVisitController();

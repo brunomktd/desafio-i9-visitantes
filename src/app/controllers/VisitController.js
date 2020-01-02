@@ -1,6 +1,6 @@
-import * as Yup from 'yup';
+const Yup = require('yup');
 
-import Visit from '../models/Visit';
+const Visit = require('../models/Visit');
 
 class VisitController {
   async store(req, res) {
@@ -134,4 +134,4 @@ class VisitController {
   }
 }
 
-export default new VisitController();
+module.exports = new VisitController();
