@@ -6,6 +6,20 @@ Crie um container docker com image postgres rodando o comando abaixo:
 Certifique-se que o container esteja em execução rodando o comando
 ## `docker ps`
 
+Utilize o arquivo .env.example (remove o final .example deixando apenas .env) e insira as váriaveis de ambiente. Se preferir pode utilizar o exemplo abaixo:
+`
+APP_URL=http://localhost:3333
+NODE_ENV=development
+
+# Database
+
+DB_HOST='localhost'
+DB_USER='postgres'
+DB_PASS='inovelab'
+DB_PORT=5432
+DB_DATABASE='postgres'
+`
+
 Faça o carregamento da pasta node_modules rodando:
 ## `yarn`
 
