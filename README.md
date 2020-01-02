@@ -6,6 +6,9 @@ Crie um container docker com image postgres rodando o comando abaixo:
 Certifique-se que o container esteja em execução rodando o comando
 ## `docker ps`
 
+Faça o carregamento da pasta node_modules rodando:
+## `yarn`
+
 Faça a conexão com a migration rodando o comando
 ## `yarn sequelize db:migrate`
 
